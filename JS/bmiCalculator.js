@@ -13,7 +13,14 @@ bmi should equal 20 when it's rounded to the nearest whole number.
 */
 function bmiCalculator(weight, height) {
     var bmi = Math.floor(weight / (height * height));
-    return bmi;
+    if (bmi < 18.5){
+        var interpretation = "Your BMI is " + bmi + ", so you are underweight."
+    }else if (bmi > 18.5 && bmi < 24.9){
+        interpretation = "Your BMI is " + bmi + ", so you have a normal weight."
+    }else{
+        interpretation = "Your BMI is " + bmi + ", so you are overweight."
+    }
+    return interpretation;
 }
 var bmi = bmiCalculator(65, 1.8); 
 
